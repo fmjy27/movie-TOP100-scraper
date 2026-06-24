@@ -99,3 +99,116 @@ slogan类型 电影宣传标语（tagline）
 跟着涛哥学爬虫，从模仿到创新，我们一起进步！🐍
 
 ---
+ # 🎬 TMDB Top Rated Movies – TOP 100 Scraper
+
+**A Python-based web scraping project that extracts the top 100 highest-rated movies from The Movie Database (TMDB) using XPath and lxml.**
+
+This project follows the practical scraping course by **Mr. Tao (黑马程序员)** on Bilibili. It demonstrates the complete workflow of **sending requests → parsing HTML → storing structured data**, making it a great hands-on exercise for beginners.
+
+---
+
+## ✨ Features
+
+- 🎯 **Target**: TMDB's "Top Rated" movies (Top 100)
+- 🔍 **Parsing**: Full XPath navigation – good practice for writing precise selectors
+- 📦 **Rich Data**: Title, year, release date, genres, runtime, rating, language, director, writers, tagline, overview...
+- 💾 **Storage**: Saves results to a **CSV** file for further analysis
+- 📄 **Pagination**: Crawls first 5 pages (20 items per page) to collect 100 movies
+- 🛡️ **Basic Anti‑blocking**: Custom User‑Agent header to mimic a real browser
+
+---
+
+## 🛠️ Tech Stack
+
+| Library | Purpose |
+|---------|---------|
+| `requests` | Send HTTP GET/POST requests |
+| `lxml` | Parse HTML and evaluate XPath expressions |
+| `re` (regex) | Extract specific patterns (e.g., runtime in `h`/`m`) |
+| `csv` | Write scraped data to CSV files |
+
+---
+
+## 📁 Project Structure
+
+```
+
+movie_top100_scraper/
+├── scraper.py                # Main script (all functions)
+├── requirements.txt          # Dependencies
+├── CSV_data/                 # Auto‑created folder
+│   └── movie_list1.csv       # Scraped results
+└── README.md
+
+```
+
+---
+
+## 🚀 Quick Start
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/yourname/movie_top100_scraper.git
+cd movie_top100_scraper
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Run the scraper
+python scraper.py
+```
+
+After execution, check CSV_data/movie_list1.csv for the results.
+
+---
+
+📊 Data Fields
+
+Field Description
+电影名 Movie title (Chinese/English)
+年份 Release year
+上映时间 Exact release date (YYYY-MM-DD)
+类型 Genres (comma‑separated)
+时长 Runtime (in minutes)
+评分 User score (percentage)
+语言 Original language code (e.g., en)
+导演 Director(s)
+作者 Writer(s) / screenwriter(s)
+slogan类型 Tagline / slogan
+简介 Plot overview
+
+---
+
+🧠 What You'll Learn
+
+By completing this project, you will:
+
+· ✅ Master basic requests usage (GET/POST)
+· ✅ Get familiar with lxml.etree and XPath syntax for extracting data from complex HTML
+· ✅ Understand how to handle pagination (static first page, POST‑based subsequent pages)
+· ✅ Practice using regular expressions to extract numeric values from strings
+· ✅ Learn to clean and store scraped data in CSV format
+
+---
+
+⚠️ Disclaimer
+
+· This scraper is intended for educational purposes only. Do not send high‑frequency requests to TMDB, as it may affect their service.
+· Consider adding time.sleep() between requests to be polite and respect robots.txt.
+· XPath expressions are based on the TMDB page structure as of 2026 – you may need to update them if the site changes.
+
+---
+
+📌 Future Improvements
+
+· Add proxy rotation and random User‑Agent to reduce blocking risks
+· Switch to the official TMDB API (cleaner data, no HTML parsing)
+· Store data in MySQL or MongoDB for persistence
+· Visualize rating distributions or director rankings with pandas + matplotlib
+
+---
+
+🌟 If this project helps you, feel free to give it a Star!
+Learn scraping with Mr. Tao, and keep coding! 🐍
+
+```
